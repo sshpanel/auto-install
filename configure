@@ -29,9 +29,8 @@ else
 	exit
 fi
 
-for "$@"
-do 
-	echo $?
+for arg in "$@"; do
+  printf 'Something with "%s"\n' "$arg"
 done
 
 
