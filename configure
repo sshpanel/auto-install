@@ -31,12 +31,12 @@ fi
 
 
 SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
-TOINSTALL=()
+declare -a TOINSTALL
 for arg in "$@"; do
   
 	inarray=$(echo ${SOFTWARES[@]} | grep -o "$arg" | wc -w)
 	if [[ "$inarray" -eq 1 ]]; then
-		$($TOINSTALL+=($arg))
+		$(TOINSTALL+=($arg))
 	fi
 
 done
