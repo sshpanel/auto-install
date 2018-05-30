@@ -30,15 +30,17 @@ else
 fi
 
 
+SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
+TOINSTALL=()
 for arg in "$@"; do
   
-	SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
 	inarray=$(echo ${SOFTWARES[@]} | grep -o "$arg" | wc -w)
 	if [[ "$inarray" -eq 1 ]]; then
-		echo "Found it!"
+		$TOINSTALL+=($arg)
 	fi
 
 done
 
+echo $TOINSTALL
 
 
