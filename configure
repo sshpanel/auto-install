@@ -29,7 +29,10 @@ else
 	exit
 fi
 
-echo "$@"
+for $@
+do 
+	echo $?
+done
 
 
 
