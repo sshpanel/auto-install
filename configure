@@ -7,7 +7,7 @@
 . $HOME/auto-install/support/string-helper.sh
 . $HOME/auto-install/support/welcome-screen.sh
 
-__LSB__=`$(lsb_release -i -s) | awk '{print tolower($0)}'`
+__LSB__=`echo $(lsb_release -i -s) | awk '{print tolower($0)}'`
 __DIST__=$(echo ${__LSB__})
 
 
