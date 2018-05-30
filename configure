@@ -41,6 +41,6 @@ for arg in "$@"; do
 
 done
 
-echo ${TOINSTALL}
+echo ${TOINSTALL[@]}
 
 
