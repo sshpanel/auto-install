@@ -29,12 +29,12 @@ else
 	exit
 fi
 
-SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
 
 for arg in "$@"; do
   
+	SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
   
-  in_array "$arg" "${SOFTWARES}"
+  in_array "$arg" "${SOFTWARES[@]}"
 
 done
 
