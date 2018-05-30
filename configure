@@ -1,0 +1,36 @@
+#!/bin/bash
+# SSHPANEL HELPERS CONFIGURATION SCRIPTS
+# Author: Rizal Fakhri <rizal@codehub.id>
+
+. $HOME/auto-install/support/app-check.sh
+. $HOME/auto-install/support/os-detector.sh
+. $HOME/auto-install/support/string-helper.sh
+. $HOME/auto-install/support/welcome-screen.sh
+
+__LSB__=`$(lsb_release -i -s) | awk '{print tolower($0)}'`
+__DIST__=$(echo ${__LSB__})
+
+clear
+
+if [[ "$EUID" -ne 0 ]]; then
+	danger "Sorry, you need to run this as root!"
+	exit
+fi
+
+if [[ -e /etc/debian_version ]]; then
+	OS=debian
+	GROUPNAME=nogroup
+	RCLOCAL='/etc/rc.local'
+elif [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
+	OS=centos
+	GROUPNAME=nobody
+	RCLOCAL='/etc/rc.d/rc.local'
+else
+	danger "You aren't running this installer on Debian, Ubuntu or CentOS, Aborting!"
+	exit
+fi
+
+echo "$@"
+
+
+
