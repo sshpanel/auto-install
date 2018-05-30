@@ -41,6 +41,14 @@ for arg in "$@"; do
 
 done
 
-echo ${TOINSTALL[@]}
+L2TPINLIST=$(echo ${TOINSTALL[@]} | grep -o "l2tp" | wc -w)
+SOFTETHERINLIST=$(echo ${TOINSTALL[@]} | grep -o "softether" | wc -w)
+
+if [ "$L2TPINLIST" -eq 1 ] && [ "$SOFTETHERINLIST" -eq 1 ]; then
+	delete=("l2tp")
+	TOINSTALL=("${TOINSTALL[@]/$delete}")
+fi
+
+echo $TOINSTALL
 
 
