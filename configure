@@ -34,7 +34,9 @@ for arg in "$@"; do
   
 	SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
 	inarray=$(echo ${SOFTWARES[@]} | grep -o "$arg" | wc -w)
-	echo $inarray;
+	if [[ "$inarray" -eq 1 ]]; then
+		echo "Found it!"
+	fi
 
 done
 
