@@ -34,7 +34,7 @@ SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
 for arg in "$@"; do
   
   
-  echo `in_array $arg SOFTWARES`
+  in_array "$arg" "$(SOFTWARES)"
 
 done
 
