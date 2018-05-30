@@ -29,8 +29,13 @@ else
 	exit
 fi
 
+SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
+
 for arg in "$@"; do
-  printf 'Something with "%s"\n' "$arg"
+  
+  status=`in_array $arg SOFTWARES`
+  echo $status
+
 done
 
 
