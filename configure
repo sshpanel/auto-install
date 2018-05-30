@@ -30,7 +30,7 @@ else
 fi
 
 
-SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "squid" "badvpn")
+SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "badvpn")
 declare -a TOINSTALL
 for arg in "$@"; do
   
