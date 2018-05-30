@@ -36,7 +36,7 @@ for arg in "$@"; do
   
 	inarray=$(echo ${SOFTWARES[@]} | grep -o "$arg" | wc -w)
 	if [[ "$inarray" -eq 1 ]]; then
-		$(TOINSTALL+=($arg))
+		$($TOINSTALL+=($arg))
 	fi
 
 done
