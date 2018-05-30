@@ -10,7 +10,6 @@
 __LSB__=`$(lsb_release -i -s) | awk '{print tolower($0)}'`
 __DIST__=$(echo ${__LSB__})
 
-clear
 
 if [[ "$EUID" -ne 0 ]]; then
 	danger "Sorry, you need to run this as root!"
