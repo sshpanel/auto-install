@@ -12,7 +12,7 @@ __DIST__=$(echo ${__LSB__})
 
 
 if [[ "$EUID" -ne 0 ]]; then
-	danger "Sorry, you need to run this as root!"
+	echo "Sorry, you need to run this as root!!"
 	exit
 fi
 
@@ -46,8 +46,11 @@ SOFTETHERINLIST=$(echo ${TOINSTALL[@]} | grep -o "softether" | wc -w)
 
 if [ "$L2TPINLIST" -eq 1 ] && [ "$SOFTETHERINLIST" -eq 1 ]; then
 	delete=("l2tp")
-	echo ${TOINSTALL[@]/$delete}
+	TOINSTALL=${TOINSTALL[@]/$delete}
 fi
+
+echo ${TOINSTALL[@]}
+
 
 
 
