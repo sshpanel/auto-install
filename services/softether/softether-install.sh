@@ -154,7 +154,7 @@ cd /usr/local/vpnserver
 # ENABLE L2TP/IPSec
  
 cd /usr/local/vpnserver
-./vpncmd localhost /SERVER /CMD: IPsecEnable /L2TP:yes /L2TPRAW:yes /PSK:$(echo $L2TP_IPSEC) /DEFAULTHUB:VPNPANEL
+./vpncmd localhost /SERVER /CMD: IPsecEnable /L2TP:yes /L2TPRAW:yes /PSK:$(echo $L2TP_IPSEC) /DEFAULTHUB:VPNPANEL /ETHERIP:yes
 
 # SETTING UP ADMIN PASSWORD
 
