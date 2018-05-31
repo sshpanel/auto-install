@@ -149,12 +149,12 @@ fi
 # CREATE NEW VIRTUAL HUB
 
 cd /usr/local/vpnserver
-./vpncmd localhost /SERVER /PASSWORD:$(echo $ADMIN_PASSWORD) /CMD: HubCreate VPNPANEL /PASSWORD: $(echo $HUB_PASSWORD)
+./vpncmd localhost /SERVER /CMD: HubCreate VPNPANEL /PASSWORD: $(echo $HUB_PASSWORD)
 
 # ENABLE L2TP/IPSec
  
 cd /usr/local/vpnserver
-./vpncmd localhost /SERVER /PASSWORD:$(echo $ADMIN_PASSWORD) /CMD: IPsecEnable /L2TP:yes /L2TPRAW:yes /PSK:$(echo $L2TP_IPSEC) /DEFAULTHUB:VPNPANEL
+./vpncmd localhost /SERVER /CMD: IPsecEnable /L2TP:yes /L2TPRAW:yes /PSK:$(echo $L2TP_IPSEC) /DEFAULTHUB:VPNPANEL
 
 # SETTING UP ADMIN PASSWORD
 
