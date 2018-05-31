@@ -46,7 +46,7 @@ SOFTETHERINLIST=$(echo ${TOINSTALL[@]} | grep -o "softether" | wc -w)
 
 if [ "$L2TPINLIST" -eq 1 ] && [ "$SOFTETHERINLIST" -eq 1 ]; then
 	delete=("l2tp")
-	TOINSTALL=${TOINSTALL[@]/$delete}
+	${TOINSTALL[@]/$delete}
 fi
 
 echo ${TOINSTALL[@]}
