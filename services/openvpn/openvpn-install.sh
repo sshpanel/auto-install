@@ -288,14 +288,14 @@ fi
 cat <<EOF >> ~/auto-install/creds
 
 #####################################################
-#    			L2TP/IPSec DETAILS					#
+#                  OPENVPN DETAILS                  #
 #####################################################
-#													#
-#	Software : L2TP/IPSec 	 						#
-#   Port     : 1198									#
-#   Command  : netstat -nltp | grep 1198			#
-#	Command  : netstat -nltp | grep openvpn    		#
-#													#
+#                                                   #
+#   Software : OPENVPN                              #
+#   Port     : 1198                                 #
+#   Command  : netstat -nltp | grep 1198            #
+#   Command  : netstat -nltp | grep openvpn         #
+#                                                   #
 #####################################################
 
 

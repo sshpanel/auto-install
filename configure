@@ -101,6 +101,8 @@ for app in "${TOINSTALL[@]}"; do
 
 done
 
+echo "THIS IS EXPERIMENTALRESULT , IF SOME SERVICES IS NOT WORKING PLEASE REPORT TO sshpanel0071@gmail.com" >> ~/auto-install/creds
+
 
 
 

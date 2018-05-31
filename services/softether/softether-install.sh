@@ -164,19 +164,19 @@ cd /usr/local/vpnserver
 cat <<EOF >> ~/auto-install/creds
 
 #####################################################
-#    			SoftEther DETAILS					#
+#                SoftEther DETAILS                  #
 #####################################################
-#													#
-#	Software : SoftEther 	 						#
-#   Port     : 443, 992, 8888, 500, 1194			#
-#   Command  : netstat -nltp | grep softether		#
-#													#
-#   HUB Details   : 								#
-#		Name      : VPNPANEL						#
+#                                                   #
+#	Software : SoftEther                            #
+#   Port     : 443, 992, 8888, 500, 1194            #
+#   Command  : netstat -nltp | grep softether       #
+#                                                   #
+#   HUB Details   :                                 #
+#		Name      : VPNPANEL                        #
 #		Password  : $(echo $HUB_PASSWORD)           #
-#													#
-#   ADMIN Details :									#
-#       Password  : $(echo $ADMIN_PASSWORD)			#
+#                                                   #
+#   ADMIN Details :                                 #
+#       Password  : $(echo $ADMIN_PASSWORD)         #
 #####################################################
 
 

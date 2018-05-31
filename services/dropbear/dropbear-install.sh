@@ -68,14 +68,14 @@ fi
 cat <<EOF >> ~/auto-install/creds
 
 #####################################################
-#    			DROPBEAR DETAILS					#
+#                DROPBEAR DETAILS                   #
 #####################################################
-#													#
-#	Software : dropbear 	 						#
-#   Port     : 109, 110, 143						#
-#   Command  : netstat -nltp | grep dropbear		#
-#   Command  : service dropbear status       		#
-#													#
+#                                                   #
+#	Software : dropbear                             #
+#   Port     : 109, 110, 143                        #
+#   Command  : netstat -nltp | grep dropbear        #
+#   Command  : service dropbear status              #
+#                                                   #
 #####################################################
 
 

@@ -50,13 +50,13 @@ screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 cat <<EOF >> ~/auto-install/creds
 
 #####################################################
-#    				BADVPN DETAILS					#
+#                 BADVPN DETAILS                    #
 #####################################################
-#													#
-#	Software : badvpn-udpgw 						#
-#   Port     : 7300									#
-#   Command  : netstat -nltp | grep 7300			#
-#													#
+#                                                   #
+#   Software : badvpn-udpgw                         #
+#   Port     : 7300                                 #
+#   Command  : netstat -nltp | grep 7300            #
+#                                                   #
 #####################################################
 
 

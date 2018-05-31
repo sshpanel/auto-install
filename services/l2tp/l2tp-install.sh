@@ -49,13 +49,13 @@ bash configure
 cat <<EOF >> ~/auto-install/creds
 
 #####################################################
-#    			L2TP/IPSec DETAILS					#
+#               L2TP/IPSec DETAILS                  #
 #####################################################
-#													#
-#	Software : L2TP/IPSec 	 						#
-#   Port     : 1701									#
-#   Command  : netstat -nltp | grep 1701			#
-#													#
+#                                                   #
+#	Software : L2TP/IPSec                           #
+#   Port     : 1701                                 #
+#   Command  : netstat -nltp | grep 1701            #
+#                                                   #
 #####################################################
 
 
