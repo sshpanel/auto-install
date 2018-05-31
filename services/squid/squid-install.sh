@@ -64,7 +64,7 @@ cat <<EOF >> ~/auto-install/creds
 #                   SQUID DETAILS                   #
 #####################################################
 #                                                   #
-#	Software : SQUID                                #
+#   Software : SQUID                                #
 #   Port     : 8080, 3128                           #
 #   Command  : netstat -nltp | grep squid           #
 #                                                   #
