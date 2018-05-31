@@ -145,11 +145,7 @@ EOF
 fi
 
 # setup last required actions
-# SETTING UP ADMIN PASSWORD
-
-cd /usr/local/vpnserver
-./vpncmd localhost /SERVER /CMD: ServerPasswordSet $(echo $ADMIN_PASSWORD)
-
+#
 # CREATE NEW VIRTUAL HUB
 
 cd /usr/local/vpnserver
@@ -160,6 +156,10 @@ cd /usr/local/vpnserver
 cd /usr/local/vpnserver
 ./vpncmd localhost /SERVER /PASSWORD:$(echo $ADMIN_PASSWORD) /CMD: IPsecEnable /L2TP:yes /L2TPRAW:yes /PSK:$(echo $L2TP_IPSEC) /DEFAULTHUB:VPNPANEL
 
+# SETTING UP ADMIN PASSWORD
+
+cd /usr/local/vpnserver
+./vpncmd localhost /SERVER /CMD: ServerPasswordSet $(echo $ADMIN_PASSWORD)
 
 cat <<EOF >> ~/auto-install/creds
 
