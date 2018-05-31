@@ -58,5 +58,17 @@ if [[ "$OS" = "centos" ]]; then
 	chkconfig squid on
 fi
 
-success "Squid3 Successfully installed!"
-info "Running on port: 8080"
+cat <<EOF >> ~/auto-install/creds
+
+#####################################################
+#    				SQUID DETAILS					#
+#####################################################
+#													#
+#	Software : SQUID 	 	 						#
+#   Port     : 8080, 3128							#
+#   Command  : netstat -nltp | grep squid 			#
+#													#
+#####################################################
+
+
+EOF

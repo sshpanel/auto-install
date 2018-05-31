@@ -47,7 +47,19 @@ sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/
 chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
-success "BadVPN Successfully installed!"
-info "Running on port: 7300"
+cat <<EOF >> ~/auto-install/creds
+
+#####################################################
+#    				BADVPN DETAILS					#
+#####################################################
+#													#
+#	Software : badvpn-udpgw 						#
+#   Port     : 7300									#
+#   Command  : netstat -nltp | grep 7300			#
+#													#
+#####################################################
+
+
+EOF
 
 

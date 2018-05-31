@@ -65,9 +65,20 @@ if [[ "$OS" = "centos" ]]; then
 	chkconfig dropbear on
 fi
 
-echo "Dropbear successfully installed!"
-echo "-----------------------------------"
-echo "Ports: 143, 110, 109"
-echo "-----------------------------------"
+cat <<EOF >> ~/auto-install/creds
+
+#####################################################
+#    			DROPBEAR DETAILS					#
+#####################################################
+#													#
+#	Software : dropbear 	 						#
+#   Port     : 109, 110, 143						#
+#   Command  : netstat -nltp | grep dropbear		#
+#   Command  : service dropbear status       		#
+#													#
+#####################################################
+
+
+EOF
 
 

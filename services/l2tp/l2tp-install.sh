@@ -45,3 +45,18 @@ cd ~
 git clone https://github.com/sshpanel/setup-ipsec-vpn
 cd setup-ipsec-vpn
 bash configure
+
+cat <<EOF >> ~/auto-install/creds
+
+#####################################################
+#    			L2TP/IPSec DETAILS					#
+#####################################################
+#													#
+#	Software : L2TP/IPSec 	 						#
+#   Port     : 1701									#
+#   Command  : netstat -nltp | grep 1701			#
+#													#
+#####################################################
+
+
+EOF

@@ -284,3 +284,19 @@ verb 3" > /etc/openvpn/client-common.txt
 	echo
 	echo "OpenVPN Installed!"
 fi
+
+cat <<EOF >> ~/auto-install/creds
+
+#####################################################
+#    			L2TP/IPSec DETAILS					#
+#####################################################
+#													#
+#	Software : L2TP/IPSec 	 						#
+#   Port     : 1198									#
+#   Command  : netstat -nltp | grep 1198			#
+#	Command  : netstat -nltp | grep openvpn    		#
+#													#
+#####################################################
+
+
+EOF
