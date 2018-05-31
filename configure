@@ -29,6 +29,30 @@ else
 	exit
 fi
 
+install_openvpn() {
+	bash services/openvpn/openvpn-install.sh >> install.log
+}
+
+install_l2tp() {
+	bash services/l2tp/l2tp-install.sh >> install.log
+}
+
+install_badvpn() {
+	bash services/badvpn-udpgw/badvpn-install.sh >> install.log
+}
+
+install_squid() {
+	bash services/squid/squid-install.sh >> install.log
+}
+
+install_dropbear() {
+	bash services/dropbear/dropbear-install.sh >> install.log
+}
+
+install_softether() {
+	bash services/softether/softether-install.sh >> install.log
+}
+
 
 SOFTWARES=("openvpn" "l2tp" "dropbear" "squid" "softether" "badvpn")
 declare -a TOINSTALL
@@ -76,30 +100,6 @@ for app in "${TOINSTALL[@]}"; do
 	fi
 
 done
-
-install_openvpn() {
-	bash services/openvpn/openvpn-install.sh >> install.log
-}
-
-install_l2tp() {
-	bash services/l2tp/l2tp-install.sh >> install.log
-}
-
-install_badvpn() {
-	bash services/badvpn-udpgw/badvpn-install.sh >> install.log
-}
-
-install_squid() {
-	bash services/squid/squid-install.sh >> install.log
-}
-
-install_dropbear() {
-	bash services/dropbear/dropbear-install.sh >> install.log
-}
-
-install_softether() {
-	bash services/softether/softether-install.sh >> install.log
-}
 
 
 
