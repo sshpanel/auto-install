@@ -39,7 +39,7 @@ if [[ "$OS" = "debian" ]]; then
 	MYIP=`curl -s ifconfig.me`;
 	MYIP2="s/xxxxxxxxx/$MYIP/g";
 
-	cp ~/sshpanel-bundle/services/squid/deb.conf /etc/squid/squid.conf
+	cp ~/auto-install/services/squid/deb.conf /etc/squid/squid.conf
 	sed -i $MYIP2 /etc/squid/squid.conf;
 	service squid restart
 
@@ -52,7 +52,7 @@ if [[ "$OS" = "centos" ]]; then
 	MYIP2="s/xxxxxxxxx/$MYIP/g";
 
 	mkdir /etc/squid
-	cp ~/sshpanel-bundle/services/squid/deb.conf /etc/squid/squid.conf
+	cp ~/auto-install/services/squid/deb.conf /etc/squid/squid.conf
 	sed -i $MYIP2 /etc/squid/squid.conf;
 	service squid restart
 	chkconfig squid on

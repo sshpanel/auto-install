@@ -7,6 +7,10 @@
 . $HOME/auto-install/support/welcome-screen.sh
 
 
+VPN_USERNAME='vpnuser'
+VPN_PASSWORD=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 16)
+L2TP_IPSEC=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 9)
+
 # Detect Debian users running the script with "sh" instead of bash
 if readlink /proc/$$/exe | grep -q "dash"; then
 	danger "This script needs to be run with bash!, not sh"
@@ -44,7 +48,10 @@ fi
 cd ~
 git clone https://github.com/sshpanel/setup-ipsec-vpn
 cd setup-ipsec-vpn
-bash configure
+sudo \
+VPN_IPSEC_PSK="$L2TP_IPSEC" \
+VPN_USER="$VPN_USERNAME" \
+VPN_PASSWORD="$VPN_PASSWORD" && bash configure
 
 cat <<EOF >> ~/auto-install/creds
 
@@ -52,9 +59,14 @@ cat <<EOF >> ~/auto-install/creds
 #               L2TP/IPSec DETAILS                  #
 #####################################################
 #                                                   #
-#	Software : L2TP/IPSec                           #
+#   Software : L2TP/IPSec                           #
 #   Port     : 1701                                 #
 #   Command  : netstat -nltp | grep 1701            #
+#                                                   #
+#   Details       :                                 #
+#    VPN Username : $(echo $VPN_USERNAME)           #
+#    VPN Password : $(echo $VPN_PASSWORD)           #
+#    L2TP PSK     : $(echo $L2TP_IPSEC)             #
 #                                                   #
 #####################################################
 
