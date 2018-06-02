@@ -149,34 +149,35 @@ fi
 # CREATE NEW VIRTUAL HUB
 
 cd /usr/local/vpnserver
-./vpncmd localhost /SERVER /CMD: HubCreate VPNPANEL /PASSWORD: $(echo $HUB_PASSWORD)
+./vpncmd localhost /SERVER /CMD:HubCreate VPNPANEL /PASSWORD:$HUB_PASSWORD
 
 # ENABLE L2TP/IPSec
  
 cd /usr/local/vpnserver
-./vpncmd localhost /SERVER /CMD: IPsecEnable /L2TP:yes /L2TPRAW:yes /PSK:$(echo $L2TP_IPSEC) /DEFAULTHUB:VPNPANEL /ETHERIP:yes
+./vpncmd localhost /SERVER /CMD:IPsecEnable /L2TP:yes /L2TPRAW:yes /PSK:$L2TP_IPSEC /DEFAULTHUB:VPNPANEL /ETHERIP:yes
 
 # SETTING UP ADMIN PASSWORD
 
 cd /usr/local/vpnserver
-./vpncmd localhost /SERVER /CMD: ServerPasswordSet $(echo $ADMIN_PASSWORD)
+./vpncmd localhost /SERVER /CMD:ServerPasswordSet $ADMIN_PASSWORD
 
 cat <<EOF >> ~/auto-install/creds
 
 #####################################################
-#                SoftEther DETAILS                  #
+#                SoftEther DETAILS           		#
 #####################################################
 #                                                   #
 #	Software : SoftEther                            #
 #   Port     : 443, 992, 8888, 500, 1194            #
 #   Command  : netstat -nltp | grep softether       #
 #                                                   #
-#   HUB Details   :                                 #
-#		Name      : VPNPANEL                        #
-#		Password  : $(echo $HUB_PASSWORD)           #
+#   HUB Details    :                                #
+#       Name       : VPNPANEL                       #
+#       Password   : $(echo $HUB_PASSWORD)          #
 #                                                   #
-#   ADMIN Details :                                 #
-#       Password  : $(echo $ADMIN_PASSWORD)         #
+#   ADMIN Password : $(echo $ADMIN_PASSWORD)        #
+#   L2TP PSK       : $(echo $L2TP_IPSEC)            #
+#
 #####################################################
 
 
