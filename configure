@@ -73,6 +73,8 @@ if [ "$L2TPINLIST" -eq 1 ] && [ "$SOFTETHERINLIST" -eq 1 ]; then
 	TOINSTALL=(${TOINSTALL[@]/$delete})
 fi
 
+cat signature >> install.log
+
 for app in "${TOINSTALL[@]}"; do
 
 	if [[ "$app" = "openvpn" ]]; then
@@ -100,6 +102,9 @@ for app in "${TOINSTALL[@]}"; do
 	fi
 
 done
+echo "" >> install.log
+echo "" >> install.log
+cat creds >> install.log
 
 echo "THIS IS EXPERIMENTALRESULT , IF SOME SERVICES IS NOT WORKING PLEASE REPORT TO sshpanel0071@gmail.com" >> ~/auto-install/creds
 
